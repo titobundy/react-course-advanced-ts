@@ -1,0 +1,24 @@
+.Tabs {
+  & ul {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    cursor: pointer;
+  }
+}
+
+.TabActive {
+  border-bottom: 1px solid var(--green);
+}
+
+.TabContent {
+  text-align: center;
+  background-color: var(--white);
+  border-radius: 8px;
+  margin: 0 24px;
+  padding: 16px !important;
+  width: calc(100% - 32px);
+  & em {
+    margin-right: 8px;
+  }
+}

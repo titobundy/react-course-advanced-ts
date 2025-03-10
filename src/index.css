@@ -1,68 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --blue: #79E0EE;
+  --mint: #98EECC;
+  --sage: #D0F5BE;
+  --yellow: #FBFFDC;
+  --green: #004028;
+  --light-green: #EAF5ED;
+  --white: #FFFFFF;
 }
 
 body {
   margin: 0;
+  padding: 40px;
   display: flex;
-  place-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--white);
+  color: var(--green);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 40px;
+  & h1 {
+    line-height: 1.2;
+    text-align: center;
+  }
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+header button,
+section button {
+  background-color: var(--yellow);
+  color: var(--green);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: 1px solid var(--green);
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 8px 16px;
+  transition: border 0.1s ease;
+  &:hover {
+    border-left: 2px solid var(--green);
+    border-bottom: 2px solid var(--green);
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.Patterns {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  & section {
+    border: 1px dashed var(--green);
+    border-radius: 8px;
+    padding: 24px;
+    & h2 {
+      margin: 0;
+    }
   }
-  a:hover {
-    color: #747bff;
+  & div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background-color: var(--light-green);
+    border-radius: 8px;
+    padding: 16px;
+    & p,
+    & ul {
+      margin: 0;
+      padding: 0;
+    }
   }
-  button {
-    background-color: #f9f9f9;
+  & div:not(:last-child) {
+    margin-bottom: 16px;
   }
+  & img {
+    height: 160px;
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+  & input {
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: calc(100% - 16px);
+  }
+}
+
+footer p {
+  text-align: center;
+  margin: 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
 }
